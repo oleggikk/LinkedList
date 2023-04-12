@@ -1,13 +1,7 @@
-#include <iostream>
+#include "Node.h"
 
-class Node { // Element of Linked List, include data, ptr to next elem
-public:
-    int data;
-    Node* next;
-
-    Node(int value)
+Node::Node(int value)
     {
         data = value;
         next = nullptr;
     }
-};

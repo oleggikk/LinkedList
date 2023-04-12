@@ -1,22 +1,16 @@
 #include "iostream"
 #include "Node.h"
+#include "LinkedList.h"
 
-class LinkedList
-{
-private:
-    Node *head;
-    Node *tail;
-    int size;
 
-public:
-    LinkedList() // Create new empty Linked List
+LinkedList::LinkedList() // Create new empty Linked List
     {
         head = nullptr;
         tail = nullptr;
         size = 0;
     }
 
-    void add_front(int value)
+    void LinkedList::add_front(int value)
     {
         Node* newNode = new Node(value);
 
@@ -33,7 +27,7 @@ public:
         size++;
     }
 
-    void add_back(int value)
+    void LinkedList::add_back(int value)
     {
         Node* newNode = new Node(value);
 
@@ -50,7 +44,7 @@ public:
         size++;
     }
 
-    void add_at(int index, int value)
+    void LinkedList::add_at(int index, int value)
     {
         if (index < 0 || index > size)
         {
@@ -85,7 +79,7 @@ public:
         size++;
     }
 
-    void remove_front() {
+    void LinkedList::remove_front() {
         if (head == nullptr) {
             std::cout << "List is empty, here is nothing to delete.\n";
             return;
@@ -101,7 +95,7 @@ public:
         }
     }
 
-    void remove_back() {
+    void LinkedList::remove_back() {
         if (tail == nullptr) {
             std::cout << "List is empty, here is nothing to delete.\n";
             return;
@@ -126,7 +120,7 @@ public:
         size--;
     }
 
-    void remove_at(int index) {
+    void LinkedList::remove_at(int index) {
         if (index < 0 || index >= size) {
             std::cout << "Invalid index\n";
             return;
@@ -155,7 +149,7 @@ public:
         size--;
     }
 
-    int find(int value) {
+    int LinkedList::find(int value) {
         Node* current = head;
         int index = 0;
 
@@ -171,7 +165,7 @@ public:
         return -1;
     }
 
-    int find_at(int index) {
+    int LinkedList::find_at(int index) {
         if (index < 0 || index >= size) {
             std::cout << "Invalid index\n";
             return -1;
@@ -186,7 +180,7 @@ public:
         return current->data;
     }
 
-    void print()
+    void LinkedList::print()
     {
         Node* current = head;
 
@@ -198,9 +192,7 @@ public:
         std::cout << std::endl;
     }
 
-    int get_size()
+    int LinkedList::get_size()
     {
         return size;
     }
-
-};
